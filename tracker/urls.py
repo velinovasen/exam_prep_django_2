@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from tracker.views.expense_views import create_expense_view, edit_expense_view, delete_expense_view
-from tracker.views.profile_views import home_page_view, profile_view
+from tracker.views.profile_views import home_page_view, profile_view, edit_profile_view, delete_profile_view
 
 urlpatterns = [
     path('', home_page_view, name='home page'),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('edit/<int:my_id>/', edit_expense_view, name='edit expense'),
     path('delete/<int:my_id>/', delete_expense_view, name='delete expense'),
     # profile views
-    path('profile', profile_view, name='profile view'),
-
+    path('profile/', profile_view, name='profile'),
+    path('profile/edit/', edit_profile_view, name='edit profile'),
+    path('profile/delete/', delete_profile_view, name='delete profile')
 ]
